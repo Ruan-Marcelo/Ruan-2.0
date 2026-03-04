@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* ===== HEADER ===== */
+
+header {
+  width: 100%;
+  padding: 30px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.logo {
+  color: #7b2cff;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 60px;
+}
+
+nav ul li {
+  cursor: pointer;
+  font-weight: 400;
+  transition: 0.3s;
+  position: relative;
+}
+
+nav ul li:hover {
+  color: #7b2cff;
+}
+
+nav ul .active {
+  color: #7b2cff;
+}
+
+nav ul .active::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 3px;
+  background: #7b2cff;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+  border-radius: 10px;
+}
+
+/* ===== TOGGLE BUTTON ===== */
+
+.toggle-btn {
+  background: #7b2cff;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.toggle-btn .circle {
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+/* ===== HERO SECTION ===== */
+
+main {
+  height: 90vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-text {
+  position: absolute;
+  font-size: 180px;
+  font-weight: 900;
+  color: #fff;
+  opacity: 0.08;
+  letter-spacing: 10px;
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* ===== HERO IMAGE ===== */
+
+.hero-image {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-image img {
+  height: 500px;
+  object-fit: contain;
+}
+
+/* ===== SOCIALS ===== */
+
+.socials {
+  position: absolute;
+  left: 60px;
+  bottom: 60px;
+  display: flex;
+  gap: 20px;
+}
+
+.socials a {
+  font-size: 28px;
+  color: #7b2cff;
+  transition: 0.3s;
+}
+
+.socials a:hover {
+  transform: scale(1.2);
+}
+
+/* ===== WEBSITE TEXT ===== */
+
+.website {
+  position: absolute;
+  right: 60px;
+  bottom: 60px;
+  font-size: 14px;
+  opacity: 0.7;
+}
+/* site ruan */
+.site{
+    text-decoration: none;
+    color: #ffffff;
+}
