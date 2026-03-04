@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -85,6 +85,7 @@ nav ul .active::after {
 /* ===== HERO SECTION ===== */
 
 main {
+    
   height: 90vh;
   position: relative;
   display: flex;
@@ -94,13 +95,16 @@ main {
 
 .bg-text {
   position: absolute;
-  font-size: 180px;
-  font-weight: 900;
-  color: #fff;
-  opacity: 0.08;
-  letter-spacing: 10px;
+  font-family: 'Anton', sans-serif;
+
+  font-size: clamp(60px, 15vw, 240px);
+
+  letter-spacing: 5px;
+  color: #ffffff;
   white-space: nowrap;
-  user-select: none;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 20%;
 }
 
 /* ===== HERO IMAGE ===== */
@@ -111,8 +115,8 @@ main {
 }
 
 .hero-image img {
-  height: 500px;
-  object-fit: contain;
+  width: clamp(200px, 35vw, 500px);
+  height: auto;
 }
 
 /* ===== SOCIALS ===== */
@@ -126,7 +130,7 @@ main {
 }
 
 .socials a {
-  font-size: 28px;
+  font-size: 50px;
   color: #7b2cff;
   transition: 0.3s;
 }
@@ -145,7 +149,38 @@ main {
   opacity: 0.7;
 }
 /* site ruan */
-.site{
-    text-decoration: none;
-    color: #ffffff;
+.site {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 25px;
+  font-family: sans-serif;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+
+  header {
+    padding: 20px;
+  }
+
+  nav ul {
+    gap: 20px;
+    font-size: 14px;
+  }
+
+  .bg-text {
+    top: 25%;
+    letter-spacing: 2px;
+  }
+
+  .socials {
+    left: 20px;
+    bottom: 20px;
+  }
+
+  .website {
+    right: 20px;
+    bottom: 20px;
+    font-size: 12px;
+  }
 }
