@@ -11,7 +11,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ===== HEADER ===== */
+
 
 header {
   width: 100%;
@@ -41,13 +41,12 @@ nav ul li {
   transition: 0.3s;
   position: relative;
 }
-
 nav ul li:hover {
   color: #7b2cff;
 }
 
 nav ul .active {
-  color: #7b2cff;
+  color: #7b2cff !important;;
 }
 
 nav ul .active::after {
@@ -62,7 +61,7 @@ nav ul .active::after {
   border-radius: 10px;
 }
 
-/* ===== TOGGLE BUTTON ===== */
+
 
 .toggle-btn {
   background: #7b2cff;
@@ -82,7 +81,7 @@ nav ul .active::after {
   border-radius: 50%;
 }
 
-/* ===== HERO SECTION ===== */
+
 
 main {
     
@@ -107,7 +106,7 @@ main {
   top: 20%;
 }
 
-/* ===== HERO IMAGE ===== */
+
 
 .hero-image {
   position: relative;
@@ -117,9 +116,10 @@ main {
 .hero-image img {
   width: clamp(200px, 35vw, 500px);
   height: auto;
+  border-radius: 100px;
 }
 
-/* ===== SOCIALS ===== */
+
 
 .socials {
   position: absolute;
@@ -139,7 +139,6 @@ main {
   transform: scale(1.2);
 }
 
-/* ===== WEBSITE TEXT ===== */
 
 .website {
   position: absolute;
@@ -156,8 +155,12 @@ main {
   font-family: sans-serif;
   font-weight: 600;
 }
+a{
+  text-decoration: none;
+  color: inherit;
+}
 
-/* ===== RESPONSIVIDADE COMPLETA ===== */
+
 
 @media (max-width: 1024px) {
     header {
@@ -170,16 +173,16 @@ main {
 }
 
 @media (max-width: 768px) {
-    /* Ajuste do Header para Mobile */
+
     header {
         padding: 20px;
-        flex-wrap: wrap; /* Permite que o conteúdo quebre linha se necessário */
+        flex-wrap: wrap; 
         justify-content: center;
         gap: 15px;
     }
 
     .logo {
-        width: 100%; /* Logo ganha destaque no topo */
+        width: 100%;
         text-align: center;
         order: 1;
     }
@@ -198,32 +201,32 @@ main {
         order: 2;
     }
 
-    /* Ajuste do Texto de Fundo */
+   
     .bg-text {
-        top: 30%; /* Desce um pouco para não bater no menu */
+        top: 30%; 
         letter-spacing: 2px;
         width: 100%;
         text-align: center;
     }
 
-    /* Imagem Hero */
+
     .hero-image img {
-        width: 60vw; /* Aumenta a proporção da imagem no mobile */
+        width: 60vw; 
         max-width: 350px;
     }
 
-    /* Rodapé Mobile */
+ 
     .socials {
         left: 50%;
-        transform: translateX(-50%); /* Centraliza os ícones */
-        bottom: 80px; /* Sobe para dar espaço ao link do site */
+        transform: translateX(-50%); 
+        bottom: 80px; 
     }
 
     .website {
         right: 0;
         left: 0;
         bottom: 30px;
-        text-align: center; /* Centraliza o link do site */
+        text-align: center; 
     }
 
     .site {
@@ -233,7 +236,7 @@ main {
 
 @media (max-width: 480px) {
     .bg-text {
-        font-size: 14vw; /* Texto se adapta ao limite da largura */
+        font-size: 14vw; 
     }
 
     nav ul {
@@ -241,6 +244,6 @@ main {
     }
 
     .socials a {
-        font-size: 40px; /* Ícones um pouco menores */
+        font-size: 40px; 
     }
 }
