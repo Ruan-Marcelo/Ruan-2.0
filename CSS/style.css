@@ -157,30 +157,90 @@ main {
   font-weight: 600;
 }
 
+/* ===== RESPONSIVIDADE COMPLETA ===== */
+
+@media (max-width: 1024px) {
+    header {
+        padding: 30px 40px;
+    }
+    
+    nav ul {
+        gap: 30px;
+    }
+}
+
 @media (max-width: 768px) {
+    /* Ajuste do Header para Mobile */
+    header {
+        padding: 20px;
+        flex-wrap: wrap; /* Permite que o conteúdo quebre linha se necessário */
+        justify-content: center;
+        gap: 15px;
+    }
 
-  header {
-    padding: 20px;
-  }
+    .logo {
+        width: 100%; /* Logo ganha destaque no topo */
+        text-align: center;
+        order: 1;
+    }
 
-  nav ul {
-    gap: 20px;
-    font-size: 14px;
-  }
+    nav {
+        order: 3;
+        width: 100%;
+    }
 
-  .bg-text {
-    top: 25%;
-    letter-spacing: 2px;
-  }
+    nav ul {
+        justify-content: center;
+        gap: 20px;
+    }
 
-  .socials {
-    left: 20px;
-    bottom: 20px;
-  }
+    .toggle-btn {
+        order: 2;
+    }
 
-  .website {
-    right: 20px;
-    bottom: 20px;
-    font-size: 12px;
-  }
+    /* Ajuste do Texto de Fundo */
+    .bg-text {
+        top: 30%; /* Desce um pouco para não bater no menu */
+        letter-spacing: 2px;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Imagem Hero */
+    .hero-image img {
+        width: 60vw; /* Aumenta a proporção da imagem no mobile */
+        max-width: 350px;
+    }
+
+    /* Rodapé Mobile */
+    .socials {
+        left: 50%;
+        transform: translateX(-50%); /* Centraliza os ícones */
+        bottom: 80px; /* Sobe para dar espaço ao link do site */
+    }
+
+    .website {
+        right: 0;
+        left: 0;
+        bottom: 30px;
+        text-align: center; /* Centraliza o link do site */
+    }
+
+    .site {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .bg-text {
+        font-size: 14vw; /* Texto se adapta ao limite da largura */
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    .socials a {
+        font-size: 40px; /* Ícones um pouco menores */
+    }
 }
