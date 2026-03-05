@@ -1,13 +1,30 @@
+:root {
+  --bg: #000;
+  --text: #fff;
+  --header-bg: transparent;
+  --card: #111;
+  --accent: #7b2cff;
+}
+
+.light-mode {
+  --bg: #ffffff;
+  --text: #111;
+  --header-bg: #ffffff;
+  --card: #f3f3f3;
+  --accent: #7b2cff;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  transition: background 0.3s, color 0.3s;
 }
 
 body {
-  background: #000;
-  color: #fff;
+  background: var(--bg);
+  color: var(--text);
   overflow-x: hidden;
 }
 
@@ -19,10 +36,11 @@ header {
   align-items: center;
   position: relative;
   z-index: 10;
+  background: var(--header-bg);
 }
 
 .logo {
-  color: #7b2cff;
+  color: var(--accent);
   font-weight: 700;
   letter-spacing: 2px;
 }
@@ -39,12 +57,13 @@ nav ul li {
   transition: 0.3s;
   position: relative;
 }
+
 nav ul li:hover {
-  color: #7b2cff;
+  color: var(--accent);
 }
 
 nav ul .active {
-  color: #7b2cff !important;
+  color: var(--accent) !important;
 }
 
 nav ul .active::after {
@@ -52,7 +71,7 @@ nav ul .active::after {
   position: absolute;
   width: 40px;
   height: 3px;
-  background: #7b2cff;
+  background: var(--accent);
   left: 50%;
   transform: translateX(-50%);
   bottom: -10px;
@@ -62,7 +81,7 @@ nav ul .active::after {
 .toggle-btn {
   width: 70px;
   height: 30px;
-  background: #7b2cff;
+  background: var(--accent);
   border-radius: 30px;
   display: flex;
   align-items: center;
@@ -73,8 +92,6 @@ nav ul .active::after {
   transition: 0.3s;
 }
 
-/* texto OFF */
-
 .toggle-btn .text {
   position: absolute;
   left: 10px;
@@ -84,8 +101,6 @@ nav ul .active::after {
   transition: 0.3s;
 }
 
-/* círculo */
-
 .circle {
   width: 20px;
   height: 20px;
@@ -94,42 +109,17 @@ nav ul .active::after {
   transition: 0.3s;
 }
 
-/* estado ativo */
-
 .toggle-btn.active {
   justify-content: flex-start;
+  background: #ddd;
 }
 
 .toggle-btn.active .text {
   opacity: 0;
 }
 
-/* botão ativo */
-
-.toggle-btn.active {
-  background: #ddd;
-  color: #000;
-}
-
 .toggle-btn.active .circle {
   transform: translateX(10px);
-}
-
-.light-mode {
-  background: #ffffff;
-  color: #000;
-}
-
-.light-mode header {
-  background: #fff;
-}
-
-.light-mode nav ul li {
-  color: #000;
-}
-
-.light-mode .site {
-  color: #000;
 }
 
 main {
@@ -143,11 +133,9 @@ main {
 .bg-text {
   position: absolute;
   font-family: "Anton", sans-serif;
-
   font-size: clamp(60px, 15vw, 240px);
-
   letter-spacing: 5px;
-  color: #ffffff;
+  color: var(--text);
   white-space: nowrap;
   left: 50%;
   transform: translateX(-50%);
@@ -175,7 +163,7 @@ main {
 
 .socials a {
   font-size: 50px;
-  color: #7b2cff;
+  color: var(--accent);
   transition: 0.3s;
 }
 
@@ -190,20 +178,20 @@ main {
   font-size: 14px;
   opacity: 0.7;
 }
-/* site ruan */
+
 .site {
   text-decoration: none;
-  color: #ffffff;
+  color: var(--text);
   font-size: 25px;
   font-family: sans-serif;
   font-weight: 600;
 }
+
 a {
   text-decoration: none;
   color: inherit;
 }
 
-/* sobre */
 .sobre-container {
   width: 100%;
   padding: 60px 80px;
@@ -213,6 +201,7 @@ a {
   gap: 40px;
   align-items: center;
 }
+
 .foto-grande img {
   width: 100%;
   border-radius: 20px;
@@ -223,19 +212,21 @@ a {
   font-size: 100px;
   text-align: center;
 }
+
 .fotos-menores {
   margin-top: 30px;
   display: flex;
   justify-content: center;
   gap: 25px;
 }
+
 .fotos-menores img {
   width: 200px;
   border-radius: 20px;
 }
 
 .texto h3 {
-  color: #7b2cff;
+  color: var(--accent);
   margin-bottom: 10px;
 }
 
@@ -243,7 +234,6 @@ a {
   margin-bottom: 30px;
   line-height: 1.6;
 }
-/* CONTATO */
 
 .alert {
   position: fixed;
@@ -254,11 +244,9 @@ a {
   padding: 15px 25px;
   border-radius: 8px;
   font-family: "Poppins";
-  transition: 0.4s ease;
   opacity: 0;
   pointer-events: none;
   transition: 0.4s;
-
   z-index: 9999;
 }
 
@@ -266,19 +254,12 @@ a {
   right: 20px;
   opacity: 1;
 }
-/* .honeypot {
-  display: none;
-}
-.honeypot {
-  position: absolute;
-  left: -9999px;
-} */
+
 .contato-container {
   width: 100%;
   max-width: 1300px;
   margin: auto;
   padding: 40px 80px;
-
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -305,7 +286,7 @@ a {
 }
 
 .form label {
-  color: #7b2cff;
+  color: var(--accent);
   font-weight: 600;
 }
 
@@ -316,7 +297,6 @@ a {
   border-radius: 30px;
   border: none;
   outline: none;
-
   font-size: 16px;
 }
 
@@ -329,23 +309,17 @@ a {
 .form button {
   margin-top: 20px;
   padding: 12px 25px;
-
   border: none;
   border-radius: 15px;
-
   background: #dcdcff;
-  color: #7b2cff;
-
+  color: var(--accent);
   font-size: 18px;
   font-weight: 600;
-
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-
   cursor: pointer;
-
   box-shadow: 0 0 20px rgba(123, 44, 255, 0.6);
 }
 
@@ -434,6 +408,7 @@ a {
     font-size: 40px;
   }
 }
+
 @media (max-width: 900px) {
   .contato-container {
     grid-template-columns: 1fr;

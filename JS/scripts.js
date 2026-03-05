@@ -1,47 +1,66 @@
+if (localStorage.getItem("theme") === "light") {
+  document.documentElement.classList.add("light-mode");
+}
+
 const toggle = document.getElementById("theme-toggle");
 const body = document.body;
 const text = document.getElementById("mode-text");
 
-toggle.addEventListener("click", () => {
-  body.classList.toggle("light-mode");
-  toggle.classList.toggle("active");
+if (localStorage.getItem("theme") === "light") {
+  body.classList.add("light-mode");
+  toggle.classList.add("active");
+  if (text) text.innerText = "ON";
+}
 
-  if (body.classList.contains("light-mode")) {
-    text.innerText = "ON";
-  } else {
-    text.innerText = "OFF";
-  }
-});
+if (toggle) {
+  toggle.addEventListener("click", () => {
+    body.classList.toggle("light-mode");
+    toggle.classList.toggle("active");
 
-// Serviço de email usando o emailJs
+    if (body.classList.contains("light-mode")) {
+      if (text) text.innerText = "ON";
+      localStorage.setItem("theme", "light");
+    } else {
+      if (text) text.innerText = "OFF";
+      localStorage.setItem("theme", "dark");
+    }
+  });
+}
+
 emailjs.init("N9ziwX_xtVhMMNSX7");
 
-document
-  .getElementById("contact-form")
-  .addEventListener("submit", function (event) {
+const form = document.getElementById("contact-form");
+
+if (form) {
+  form.addEventListener("submit", function (event) {
     event.preventDefault();
 
     const now = new Date();
-    document.getElementById("time").value = now.toLocaleString();
+    const timeField = document.getElementById("time");
+    if (timeField) {
+      timeField.value = now.toLocaleString();
+    }
 
     emailjs.sendForm("service_jl668yi", "template_tpbm4li", this).then(
-      function () {
+      () => {
         const alertBox = document.getElementById("alert-msg");
 
-        alertBox.classList.add("show");
+        if (alertBox) {
+          alertBox.classList.add("show");
 
-        setTimeout(() => {
-          alertBox.classList.remove("show");
-        }, 3000);
+          setTimeout(() => {
+            alertBox.classList.remove("show");
+          }, 3000);
+        }
 
-        document.getElementById("contact-form").reset();
+        form.reset();
       },
-
-      function (error) {
+      (error) => {
         alert("Erro ao enviar: " + error.text);
       },
     );
   });
+}
 
 // Serviço de email com node.js
 // const nodemailer = require("nodemailer");
