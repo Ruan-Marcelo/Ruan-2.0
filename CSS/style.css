@@ -63,25 +63,78 @@ nav ul .active::after {
 
 
 
-.toggle-btn {
+.toggle-btn{
+  width: 70px;
+  height: 30px;
   background: #7b2cff;
-  padding: 8px 18px;
-  border-radius: 20px;
-  font-size: 14px;
+  border-radius: 30px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: flex-end;
+  padding: 5px;
   cursor: pointer;
+  position: relative;
+  transition: 0.3s;
 }
 
-.toggle-btn .circle {
-  width: 18px;
-  height: 18px;
-  background: #fff;
+/* texto OFF */
+
+.toggle-btn .text{
+  position: absolute;
+  left: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  transition: 0.3s;
+}
+
+/* círculo */
+
+.circle{
+  width: 20px;
+  height: 20px;
+  background: white;
   border-radius: 50%;
+  transition: 0.3s;
 }
 
+/* estado ativo */
 
+.toggle-btn.active{
+  justify-content: flex-start;
+}
+
+.toggle-btn.active .text{
+  opacity: 0;
+}
+
+/* botão ativo */
+
+.toggle-btn.active{
+  background: #ddd;
+  color: #000;
+}
+
+.toggle-btn.active .circle{
+  transform: translateX(10px);
+}
+
+.light-mode{
+  background: #ffffff;
+  color: #000;
+}
+
+.light-mode header{
+  background: #fff;
+}
+
+.light-mode nav ul li{
+  color: #000;
+}
+
+.light-mode .site{
+  color: #000;
+}
 
 main {
     

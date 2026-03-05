@@ -33,10 +33,11 @@
         </ul>
       </nav>
 
-      <div class="toggle-btn">
-        OFF
+      <div class="toggle-btn" id="theme-toggle">
+        <span id="mode-text">OFF</span>
         <div class="circle"></div>
       </div>
+      
     </header>
 
     <main>
@@ -46,7 +47,10 @@
 
       <article>
         <div class="hero-image">
-          <img src="IMG/ruan-page1.png-removebg-preview.png" alt="Ruan Marcelo" />
+          <img
+            src="IMG/ruan-page1.png-removebg-preview.png"
+            alt="Ruan Marcelo"
+          />
         </div>
       </article>
 
@@ -61,5 +65,23 @@
         </a>
       </div>
     </main>
+
+    <script>
+      const toggle = document.getElementById("theme-toggle");
+      const body = document.body;
+      const text = document.getElementById("mode-text");
+
+      toggle.addEventListener("click", () => {
+        body.classList.toggle("light-mode");
+        toggle.classList.toggle("active");
+
+        if (body.classList.contains("light-mode")) {
+          text.innerText = "ON";
+        } else {
+          text.innerText = "OFF";
+        }
+      });
+    </script>
+    <script src="./JS/scripts.js"></script>
   </body>
 </html>
