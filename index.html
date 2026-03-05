@@ -29,7 +29,7 @@
         <ul>
           <li class="active"><a href="index.html">Início</a></li>
           <li><a href="./sobre.html">Sobre</a></li>
-          <li><a href="./contato.html">Contato</a></li>
+          <li><a href="./Contato/contato.html">Contato</a></li>
         </ul>
       </nav>
 
@@ -42,7 +42,7 @@
 
     <main>
       <article>
-        <h1 class="bg-text">PORTEFÓLIO</h1>
+        <h1 class="bg-text">PORTIFÓLIO </h1>
       </article>
 
       <article>
@@ -65,23 +65,6 @@
         </a>
       </div>
     </main>
-
-    <script>
-      const toggle = document.getElementById("theme-toggle");
-      const body = document.body;
-      const text = document.getElementById("mode-text");
-
-      toggle.addEventListener("click", () => {
-        body.classList.toggle("light-mode");
-        toggle.classList.toggle("active");
-
-        if (body.classList.contains("light-mode")) {
-          text.innerText = "ON";
-        } else {
-          text.innerText = "OFF";
-        }
-      });
-    </script>
     <script src="./JS/scripts.js"></script>
   </body>
 </html>

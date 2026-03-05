@@ -12,7 +12,7 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet" href="../CSS/style.css" />
 
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800;900&display=swap"
@@ -27,12 +27,12 @@
 
       <nav>
         <ul>
-          <li><a href="./index.html">Início</a></li>
-          <li><a href="./sobre.html">Sobre</a></li>
-          <li class="active"><a href="./contato.html">Contato</a></li>
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="../sobre.html">Sobre</a></li>
+          <li class="active"><a href="../Contato/contato.html">Contato</a></li>
         </ul>
       </nav>
-      
+
       <div class="toggle-btn" id="theme-toggle">
         <span id="mode-text">OFF</span>
         <div class="circle"></div>
@@ -40,26 +40,34 @@
     </header>
 
     <main>
-      <main class="contato-container">
+      <section class="contato-container">
         <div class="contato-img">
-          <img
-            src="./IMG/ChatGPT_Image_5_de_mar._de_2026__01_10_51-removebg-preview.png"
-            alt="Ilustração programador"
-          />
+          <img src="../IMG/imgContato.png" alt="Ilustração programador" />
         </div>
 
         <div class="form-area">
           <h1 class="titulo-contato">Entre em contato</h1>
 
-          <form class="form">
+          <form class="form" id="contact-form">
             <label>Nome</label>
-            <input type="text" placeholder="Nome:" />
+            <input type="text" name="name" placeholder="Nome:" required />
 
             <label>Email</label>
-            <input type="email" placeholder="Seu melhor E-mail:" />
+            <input
+              type="email"
+              name="email"
+              placeholder="Seu melhor E-mail:"
+              required
+            />
 
-            <label>Assunto</label>
-            <textarea placeholder="Assunto:"></textarea>
+            <label>Mensagem</label>
+            <textarea
+              name="message"
+              placeholder="Digite sua mensagem:"
+              required
+            ></textarea>
+
+            <input type="hidden" name="time" id="time" />
 
             <button type="submit">
               <ion-icon name="paper-plane-outline"></ion-icon>
@@ -67,7 +75,8 @@
             </button>
           </form>
         </div>
-      </main>
+        <div id="alert-msg" class="alert">Mensagem enviada com sucesso!</div>
+      </section>
 
       <div class="socials">
         <a href="#"><ion-icon name="logo-linkedin"></ion-icon></a>
@@ -81,6 +90,7 @@
       </div>
     </main>
 
-    <script src="./JS/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="../JS/scripts.js"></script>
   </body>
 </html>

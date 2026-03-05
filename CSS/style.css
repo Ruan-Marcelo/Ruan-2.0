@@ -245,6 +245,27 @@ a {
 }
 /* CONTATO */
 
+.alert {
+  position: fixed;
+  top: 20px;
+  right: -400px;
+  background: #4caf50;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  font-family: "Poppins";
+  transition: 0.4s ease;
+   opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+
+  z-index: 9999;
+}
+
+.alert.show {
+  right: 20px; 
+  opacity: 1;
+}
 .contato-container {
   width: 100%;
   max-width: 1300px;
