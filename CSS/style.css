@@ -11,8 +11,6 @@ body {
   overflow-x: hidden;
 }
 
-
-
 header {
   width: 100%;
   padding: 30px 80px;
@@ -46,7 +44,7 @@ nav ul li:hover {
 }
 
 nav ul .active {
-  color: #7b2cff !important;;
+  color: #7b2cff !important;
 }
 
 nav ul .active::after {
@@ -61,9 +59,7 @@ nav ul .active::after {
   border-radius: 10px;
 }
 
-
-
-.toggle-btn{
+.toggle-btn {
   width: 70px;
   height: 30px;
   background: #7b2cff;
@@ -79,7 +75,7 @@ nav ul .active::after {
 
 /* texto OFF */
 
-.toggle-btn .text{
+.toggle-btn .text {
   position: absolute;
   left: 10px;
   font-size: 12px;
@@ -90,7 +86,7 @@ nav ul .active::after {
 
 /* círculo */
 
-.circle{
+.circle {
   width: 20px;
   height: 20px;
   background: white;
@@ -100,44 +96,43 @@ nav ul .active::after {
 
 /* estado ativo */
 
-.toggle-btn.active{
+.toggle-btn.active {
   justify-content: flex-start;
 }
 
-.toggle-btn.active .text{
+.toggle-btn.active .text {
   opacity: 0;
 }
 
 /* botão ativo */
 
-.toggle-btn.active{
+.toggle-btn.active {
   background: #ddd;
   color: #000;
 }
 
-.toggle-btn.active .circle{
+.toggle-btn.active .circle {
   transform: translateX(10px);
 }
 
-.light-mode{
+.light-mode {
   background: #ffffff;
   color: #000;
 }
 
-.light-mode header{
+.light-mode header {
   background: #fff;
 }
 
-.light-mode nav ul li{
+.light-mode nav ul li {
   color: #000;
 }
 
-.light-mode .site{
+.light-mode .site {
   color: #000;
 }
 
 main {
-    
   height: 90vh;
   position: relative;
   display: flex;
@@ -147,7 +142,7 @@ main {
 
 .bg-text {
   position: absolute;
-  font-family: 'Anton', sans-serif;
+  font-family: "Anton", sans-serif;
 
   font-size: clamp(60px, 15vw, 240px);
 
@@ -159,8 +154,6 @@ main {
   top: 20%;
 }
 
-
-
 .hero-image {
   position: relative;
   z-index: 2;
@@ -171,8 +164,6 @@ main {
   height: auto;
   border-radius: 100px;
 }
-
-
 
 .socials {
   position: fixed;
@@ -192,7 +183,6 @@ main {
   transform: scale(1.2);
 }
 
-
 .website {
   position: absolute;
   right: 60px;
@@ -208,230 +198,221 @@ main {
   font-family: sans-serif;
   font-weight: 600;
 }
-a{
+a {
   text-decoration: none;
   color: inherit;
 }
 
 /* sobre */
-.sobre-container{
-    width: 100%;
-    padding: 60px 80px;
-    bottom: 50px;
-    display: grid;
-    grid-template-columns: 300px 1fr 350px;
-    gap: 40px;
-    align-items: center;
+.sobre-container {
+  width: 100%;
+  padding: 60px 80px;
+  bottom: 50px;
+  display: grid;
+  grid-template-columns: 300px 1fr 350px;
+  gap: 40px;
+  align-items: center;
 }
-.foto-grande img{
-    width: 100%;
-    border-radius: 20px;
-}
-
-.titulo{
-    font-family: 'Anton', sans-serif;
-    font-size: 100px;
-    text-align: center;
-    
-}
-.fotos-menores{
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-}
-.fotos-menores img{
-    width: 200px;
-    border-radius: 20px;
+.foto-grande img {
+  width: 100%;
+  border-radius: 20px;
 }
 
-.texto h3{
-    color: #7b2cff;
-    margin-bottom: 10px;
+.titulo {
+  font-family: "Anton", sans-serif;
+  font-size: 100px;
+  text-align: center;
+}
+.fotos-menores {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+.fotos-menores img {
+  width: 200px;
+  border-radius: 20px;
 }
 
-.texto p{
-    margin-bottom: 30px;
-    line-height: 1.6;
+.texto h3 {
+  color: #7b2cff;
+  margin-bottom: 10px;
+}
+
+.texto p {
+  margin-bottom: 30px;
+  line-height: 1.6;
 }
 /* CONTATO */
 
-.contato-container{
-    width: 100%;
-    max-width: 1300px;
-    margin: auto;
-    padding: 40px 80px;
+.contato-container {
+  width: 100%;
+  max-width: 1300px;
+  margin: auto;
+  padding: 40px 80px;
 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 80px;
 }
 
-.contato-img img{
-    width: 100%;
-    max-width: 500px;
+.contato-img img {
+  width: 100%;
+  max-width: 500px;
 }
 
-.titulo-contato{
-    font-size: 50px;
-    padding: 20px 30px;
-    border-radius: 20px;
-    background: linear-gradient(90deg,#6a5cff,#000);
-    margin-bottom: 30px;
+.titulo-contato {
+  font-size: 50px;
+  padding: 20px 30px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #6a5cff, #000);
+  margin-bottom: 30px;
 }
 
-.form{
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-.form label{
-    color: #7b2cff;
-    font-weight: 600;
+.form label {
+  color: #7b2cff;
+  font-weight: 600;
 }
 
 .form input,
-.form textarea{
+.form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
 
-    width: 100%;
-    padding: 12px 15px;
-    border-radius: 30px;
-    border: none;
-    outline: none;
-
-    font-size: 16px;
+  font-size: 16px;
 }
 
-.form textarea{
-    height: 90px;
-    resize: none;
-    border-radius: 20px;
+.form textarea {
+  height: 90px;
+  resize: none;
+  border-radius: 20px;
 }
 
-.form button{
+.form button {
+  margin-top: 20px;
+  padding: 12px 25px;
 
-    margin-top: 20px;
-    padding: 12px 25px;
+  border: none;
+  border-radius: 15px;
 
-    border: none;
-    border-radius: 15px;
+  background: #dcdcff;
+  color: #7b2cff;
 
-    background: #dcdcff;
-    color: #7b2cff;
+  font-size: 18px;
+  font-weight: 600;
 
-    font-size: 18px;
-    font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+  cursor: pointer;
 
-    cursor: pointer;
-
-    box-shadow: 0 0 20px rgba(123,44,255,0.6);
+  box-shadow: 0 0 20px rgba(123, 44, 255, 0.6);
 }
 
-.form button:hover{
-    transform: scale(1.05);
+.form button:hover {
+  transform: scale(1.05);
 }
 
 @media (max-width: 1024px) {
-    header {
-        padding: 30px 40px;
-    }
-    
-    nav ul {
-        gap: 30px;
-    }
+  header {
+    padding: 30px 40px;
+  }
+
+  nav ul {
+    gap: 30px;
+  }
 }
 
 @media (max-width: 768px) {
+  header {
+    padding: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
 
-    header {
-        padding: 20px;
-        flex-wrap: wrap; 
-        justify-content: center;
-        gap: 15px;
-    }
+  .logo {
+    width: 100%;
+    text-align: center;
+    order: 1;
+  }
 
-    .logo {
-        width: 100%;
-        text-align: center;
-        order: 1;
-    }
+  nav {
+    order: 3;
+    width: 100%;
+  }
 
-    nav {
-        order: 3;
-        width: 100%;
-    }
+  nav ul {
+    justify-content: center;
+    gap: 20px;
+  }
 
-    nav ul {
-        justify-content: center;
-        gap: 20px;
-    }
+  .toggle-btn {
+    order: 2;
+  }
 
-    .toggle-btn {
-        order: 2;
-    }
+  .bg-text {
+    top: 30%;
+    letter-spacing: 2px;
+    width: 100%;
+    text-align: center;
+  }
 
-   
-    .bg-text {
-        top: 30%; 
-        letter-spacing: 2px;
-        width: 100%;
-        text-align: center;
-    }
+  .hero-image img {
+    width: 60vw;
+    max-width: 350px;
+  }
 
+  .socials {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 80px;
+  }
 
-    .hero-image img {
-        width: 60vw; 
-        max-width: 350px;
-    }
+  .website {
+    right: 0;
+    left: 0;
+    bottom: 30px;
+    text-align: center;
+  }
 
- 
-    .socials {
-        left: 50%;
-        transform: translateX(-50%); 
-        bottom: 80px; 
-    }
-
-    .website {
-        right: 0;
-        left: 0;
-        bottom: 30px;
-        text-align: center; 
-    }
-
-    .site {
-        font-size: 18px;
-    }
+  .site {
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 480px) {
-    .bg-text {
-        font-size: 14vw; 
-    }
+  .bg-text {
+    font-size: 14vw;
+  }
 
-    nav ul {
-        gap: 15px;
-    }
+  nav ul {
+    gap: 15px;
+  }
 
-    .socials a {
-        font-size: 40px; 
-    }
+  .socials a {
+    font-size: 40px;
+  }
 }
-@media (max-width:900px){
+@media (max-width: 900px) {
+  .contato-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
 
-.contato-container{
-grid-template-columns:1fr;
-text-align:center;
-}
-
-.contato-img img{
-margin:auto;
-}
-
+  .contato-img img {
+    margin: auto;
+  }
 }
