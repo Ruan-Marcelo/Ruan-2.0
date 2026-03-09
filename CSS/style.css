@@ -81,7 +81,7 @@ nav ul .active::after {
 .toggle-btn {
   width: 70px;
   height: 30px;
-  background: var(--accent);
+  background: #333;
   border-radius: 30px;
   display: flex;
   align-items: center;
@@ -109,17 +109,20 @@ nav ul .active::after {
   transition: 0.3s;
 }
 
+/* ativo pai  */
 .toggle-btn.active {
   justify-content: flex-start;
   background: #ddd;
 }
 
 .toggle-btn.active .text {
-  opacity: 0;
+    left: 40px;
+   color: #000;
 }
 
 .toggle-btn.active .circle {
-  transform: translateX(10px);
+  background: #000;
+  transform: translateX(2px);
 }
 
 main {

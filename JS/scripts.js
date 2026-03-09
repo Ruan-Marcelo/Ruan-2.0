@@ -1,31 +1,27 @@
-if (localStorage.getItem("theme") === "light") {
-  document.documentElement.classList.add("light-mode");
-}
-
 const toggle = document.getElementById("theme-toggle");
 const body = document.body;
 const text = document.getElementById("mode-text");
 
+// carregar tema salvo
 if (localStorage.getItem("theme") === "light") {
   body.classList.add("light-mode");
   toggle.classList.add("active");
-  if (text) text.innerText = "ON";
+  text.innerText = "ON";
 }
 
-if (toggle) {
-  toggle.addEventListener("click", () => {
-    body.classList.toggle("light-mode");
-    toggle.classList.toggle("active");
+// clique no botão
+toggle.addEventListener("click", () => {
+  body.classList.toggle("light-mode");
+  toggle.classList.toggle("active");
 
-    if (body.classList.contains("light-mode")) {
-      if (text) text.innerText = "ON";
-      localStorage.setItem("theme", "light");
-    } else {
-      if (text) text.innerText = "OFF";
-      localStorage.setItem("theme", "dark");
-    }
-  });
-}
+  if (body.classList.contains("light-mode")) {
+    text.innerText = "ON";
+    localStorage.setItem("theme", "light");
+  } else {
+    text.innerText = "OFF";
+    localStorage.setItem("theme", "dark");
+  }
+});
 
 emailjs.init("N9ziwX_xtVhMMNSX7");
 
