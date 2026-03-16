@@ -1,0 +1,1 @@
+public DbSet<Certificacao> Certificacoes { get; set; }
