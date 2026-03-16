@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RuanApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9be05c4e30860e5e7ddb7a986235205eca220f16")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+80581ee442719cb95fb2986546f75f6cdc275183")]
 [assembly: System.Reflection.AssemblyProductAttribute("RuanApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RuanApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
