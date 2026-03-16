@@ -106,3 +106,32 @@ fetch("https://localhost:5001/api/certificacao")
     });
 
   });
+
+  async function carregarCertificacoes() {
+
+  const resposta = await fetch("http://localhost:5268/api/certificacao");
+
+  const dados = await resposta.json();
+
+  const container = document.getElementById("lista-certificacoes");
+
+  dados.forEach(cert => {
+
+    const card = document.createElement("div");
+    card.classList.add("cert-card");
+
+    card.innerHTML = `
+      <h3>${cert.titulo}</h3>
+      <p>${cert.instituicao}</p>
+      <a href="${cert.linkCertificado}" target="_blank">
+        Ver certificado
+      </a>
+    `;
+
+    container.appendChild(card);
+
+  });
+
+}
+
+carregarCertificacoes();
