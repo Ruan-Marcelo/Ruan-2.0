@@ -58,6 +58,7 @@ if (form) {
   });
 }
 
+/*
 // Serviço de email com node.js
 // const nodemailer = require("nodemailer");
 
@@ -82,3 +83,26 @@ if (form) {
 
 //   .then((response) => console.log("Email enviado com sucesso!"))
 //   .catch((err) => console.log("Erro ao enviar o email ", err));
+*/
+
+fetch("https://localhost:5001/api/certificacao")
+  .then(res => res.json())
+  .then(data => {
+
+    const container = document.getElementById("certificacoes");
+
+    data.forEach(cert => {
+
+      container.innerHTML += `
+        <div class="card-certificado">
+          <h3>${cert.titulo}</h3>
+          <p>${cert.instituicao}</p>
+          <a href="${cert.linkCertificado}" target="_blank">
+            Ver certificado
+          </a>
+        </div>
+      `;
+
+    });
+
+  });
