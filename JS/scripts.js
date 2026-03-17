@@ -84,19 +84,26 @@ if (form) {
 //   .then((response) => console.log("Email enviado com sucesso!"))
 //   .catch((err) => console.log("Erro ao enviar o email ", err));
 */
-const API = "http://localhost:5268/api/certificacao";
+const API = "https://back-end-ruan2-0.onrender.com/api/certificacao";
 
-document.getElementById("form").addEventListener("submit", async e => {
+document.getElementById("form").addEventListener("submit", async (e) => {
   e.preventDefault();
+
+  const titulo = document.getElementById("titulo").value;
+  const instituicao = document.getElementById("instituicao").value;
+  const data = document.getElementById("data").value;
+  const link = document.getElementById("link").value;
 
   await fetch(API, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      "Content-Type": "application/json"
+    },
     body: JSON.stringify({
-      titulo: titulo.value,
-      instituicao: instituicao.value,
-      dataConclusao: data.value,
-      linkCertificado: link.value
+      titulo: titulo,
+      instituicao: instituicao,
+      dataConclusao: data,
+      linkCertificado: link
     })
   });
 
@@ -107,6 +114,7 @@ async function carregar() {
   const res = await fetch(API);
   const data = await res.json();
 
+  const lista = document.getElementById("lista");
   lista.innerHTML = "";
 
   data.forEach(c => {
@@ -120,7 +128,9 @@ async function carregar() {
 }
 
 async function deletar(id) {
-  await fetch(`${API}/${id}`, { method: "DELETE" });
+  await fetch(`${API}/${id}`, {
+    method: "DELETE"
+  });
   carregar();
 }
 
