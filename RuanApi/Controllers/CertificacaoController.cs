@@ -16,18 +16,29 @@ namespace RuanApi.Controllers
         }
 
         [HttpGet]
-        public IActionResult Listar()
+        public IActionResult Get()
         {
             return Ok(_context.Certificacoes.ToList());
         }
 
         [HttpPost]
-        public IActionResult Criar(Certificacao certificacao)
+        public IActionResult Post(Certificacao cert)
         {
-            _context.Certificacoes.Add(certificacao);
+            _context.Certificacoes.Add(cert);
+            _context.SaveChanges();
+            return Ok(cert);
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            var cert = _context.Certificacoes.Find(id);
+            if (cert == null) return NotFound();
+
+            _context.Certificacoes.Remove(cert);
             _context.SaveChanges();
 
-            return Ok(certificacao);
+            return Ok();
         }
     }
 }
