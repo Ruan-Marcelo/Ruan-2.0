@@ -84,54 +84,44 @@ if (form) {
 //   .then((response) => console.log("Email enviado com sucesso!"))
 //   .catch((err) => console.log("Erro ao enviar o email ", err));
 */
+const API = "http://localhost:5268/api/certificacao";
 
-fetch("https://localhost:5001/api/certificacao")
-  .then(res => res.json())
-  .then(data => {
+document.getElementById("form").addEventListener("submit", async e => {
+  e.preventDefault();
 
-    const container = document.getElementById("certificacoes");
-
-    data.forEach(cert => {
-
-      container.innerHTML += `
-        <div class="card-certificado">
-          <h3>${cert.titulo}</h3>
-          <p>${cert.instituicao}</p>
-          <a href="${cert.linkCertificado}" target="_blank">
-            Ver certificado
-          </a>
-        </div>
-      `;
-
-    });
-
+  await fetch(API, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      titulo: titulo.value,
+      instituicao: instituicao.value,
+      dataConclusao: data.value,
+      linkCertificado: link.value
+    })
   });
 
-  async function carregarCertificacoes() {
+  carregar();
+});
 
-  const resposta = await fetch("http://localhost:5268/api/certificacao");
+async function carregar() {
+  const res = await fetch(API);
+  const data = await res.json();
 
-  const dados = await resposta.json();
+  lista.innerHTML = "";
 
-  const container = document.getElementById("lista-certificacoes");
-
-  dados.forEach(cert => {
-
-    const card = document.createElement("div");
-    card.classList.add("cert-card");
-
-    card.innerHTML = `
-      <h3>${cert.titulo}</h3>
-      <p>${cert.instituicao}</p>
-      <a href="${cert.linkCertificado}" target="_blank">
-        Ver certificado
-      </a>
+  data.forEach(c => {
+    lista.innerHTML += `
+      <div>
+        <b>${c.titulo}</b> - ${c.instituicao}
+        <button onclick="deletar(${c.id})">X</button>
+      </div>
     `;
-
-    container.appendChild(card);
-
   });
-
 }
 
-carregarCertificacoes();
+async function deletar(id) {
+  await fetch(`${API}/${id}`, { method: "DELETE" });
+  carregar();
+}
+
+carregar();
