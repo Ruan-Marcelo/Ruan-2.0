@@ -42,18 +42,24 @@
     </header>
 
     <main>
-      <form id="formCertificacao">
-        <input type="text" id="titulo" placeholder="Título" />
-        <input type="text" id="instituicao" placeholder="Instituição" />
-        <input type="text" id="link" placeholder="Link do certificado" />
+      <h2>Certificações</h2>
+      <div id="certificacoes"></div>
 
-        <button type="submit">Adicionar</button>
-      </form>
-      <section class="certificacoes">
-        <h2>Minhas Certificações</h2>
-
-        <div id="lista-certificacoes"></div>
-      </section>
+      <script>
+        fetch("http://localhost:5268/api/certificacao")
+          .then((r) => r.json())
+          .then((data) => {
+            data.forEach((c) => {
+              certificacoes.innerHTML += `
+      <div>
+        <h3>${c.titulo}</h3>
+        <p>${c.instituicao}</p>
+        <a href="${c.linkCertificado}">Ver</a>
+      </div>
+    `;
+            });
+          });
+      </script>
 
       <div class="socials">
         <a href="#"><ion-icon name="logo-linkedin"></ion-icon></a>
