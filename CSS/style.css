@@ -19,24 +19,38 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  transition: background 0.3s, color 0.3s;
+  transition:
+    background 0.3s,
+    color 0.3s;
 }
-
+html {
+  font-size: clamp(14px, 1.2vw, 18px);
+}
 body {
+  overflow-x: hidden;
   background: var(--bg);
   color: var(--text);
   overflow-x: hidden;
 }
+img {
+  max-width: 100%;
+  height: auto;
+}
 
 header {
   width: 100%;
-  padding: 30px 80px;
+  padding: clamp(15px, 4vw, 30px) clamp(20px, 6vw, 80px);
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
   z-index: 10;
   background: var(--header-bg);
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .logo {
@@ -77,6 +91,11 @@ nav ul .active::after {
   bottom: -10px;
   border-radius: 10px;
 }
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
 
 .toggle-btn {
   width: 70px;
@@ -116,8 +135,8 @@ nav ul .active::after {
 }
 
 .toggle-btn.active .text {
-    left: 40px;
-   color: #000;
+  left: 40px;
+  color: #000;
 }
 
 .toggle-btn.active .circle {
@@ -126,7 +145,8 @@ nav ul .active::after {
 }
 
 main {
-  height: 90vh;
+  min-height: 100vh;
+  padding: 20px;
   position: relative;
   display: flex;
   align-items: center;
@@ -163,6 +183,21 @@ main {
   display: flex;
   gap: 20px;
 }
+@media (max-width: 768px) {
+  .socials {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .website {
+    position: relative;
+    margin-top: 10px;
+  }
+}
 
 .socials a {
   font-size: 50px;
@@ -197,23 +232,29 @@ a {
 
 .sobre-container {
   width: 100%;
-  padding: 60px 80px;
-  bottom: 50px;
+  padding: clamp(20px, 5vw, 80px);
   display: grid;
-  grid-template-columns: 300px 1fr 350px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 40px;
   align-items: center;
 }
-
-.foto-grande img {
-  width: 100%;
-  border-radius: 20px;
+.centro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
-
+.foto-grande img{
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+}
 .titulo {
   font-family: "Anton", sans-serif;
-  font-size: 100px;
+  font-size: clamp(35px, 8vw, 90px);
   text-align: center;
+  line-height: 1.1;
 }
 
 .fotos-menores {
@@ -223,19 +264,18 @@ a {
   gap: 25px;
 }
 
-.fotos-menores img {
-  width: 200px;
-  border-radius: 20px;
-}
-
 .texto h3 {
   color: var(--accent);
   margin-bottom: 10px;
 }
 
+.texto {
+  max-width: 500px;
+}
+
 .texto p {
-  margin-bottom: 30px;
-  line-height: 1.6;
+  font-size: clamp(14px, 1.2vw, 18px);
+  line-height: 1.7;
 }
 
 .alert {
@@ -380,24 +420,50 @@ a {
     max-width: 350px;
   }
 
-  .socials {
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 80px;
+   .socials {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    justify-content: center;
+    margin-top: 30px;
   }
 
   .website {
-    right: 0;
-    left: 0;
-    bottom: 30px;
+    position: relative;
+    right: auto;
+    bottom: auto;
     text-align: center;
+    margin-top: 10px;
   }
 
   .site {
     font-size: 18px;
   }
 }
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
 
+  nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--bg);
+    display: none;
+  }
+
+  nav.active {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }
+}
 @media (max-width: 480px) {
   .bg-text {
     font-size: 14vw;
@@ -420,5 +486,31 @@ a {
 
   .contato-img img {
     margin: auto;
+  }
+}
+@media (max-width: 768px) {
+  .sobre-container {
+    text-align: center;
+  }
+
+  .texto {
+    order: 3;
+  }
+
+  .foto-grande {
+    order: 1;
+  }
+
+  .centro {
+    order: 2;
+  }
+
+  .fotos-menores {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fotos-menores img {
+    width: 80%;
   }
 }

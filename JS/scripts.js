@@ -1,3 +1,11 @@
+const menuToggle = document.getElementById("menu-toggle");
+const nav = document.querySelector("nav");
+
+menuToggle.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
+
+
 const toggle = document.getElementById("theme-toggle");
 const body = document.body;
 const text = document.getElementById("mode-text");
